@@ -1,0 +1,308 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --primary-light: #ede9fe;
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+  --danger-border: #fca5a5;
+  --success: #059669;
+  --success-bg: #f0fdf4;
+  --radius: 10px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13.5px;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* ── Page Header ─────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ── Cards ───────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-desc {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.card-desc a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.card-desc a:hover { text-decoration: underline; }
+
+/* ── Form Controls ───────────────────────────────── */
+.field-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.field-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 8px 11px;
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+.req { color: var(--danger); }
+
+/* ── Action Rows ─────────────────────────────────── */
+.action-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ─────────────────────────────────────── */
+.btn-primary {
+  padding: 8px 18px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.btn-primary:hover { background: var(--primary-hover); }
+
+.btn-secondary {
+  padding: 8px 16px;
+  background: var(--surface);
+  color: #374151;
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-danger {
+  padding: 8px 16px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1.5px solid var(--danger-border);
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.btn-danger:hover { background: #fee2e2; }
+
+.btn-icon {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  transition: background 0.12s;
+  flex-shrink: 0;
+}
+
+.btn-icon:hover { background: #f3f4f6; }
+
+/* ── Status Messages ─────────────────────────────── */
+.status-msg {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.status-msg.success {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid #6ee7b7;
+}
+
+.status-msg.error {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}
+
+.hidden { display: none !important; }
+
+/* ── Custom Techniques List ──────────────────────── */
+.custom-list { margin-bottom: 12px; }
+
+.custom-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.custom-item:last-child { border-bottom: none; }
+
+.custom-item-info { min-width: 0; }
+
+.custom-item-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.custom-item-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.custom-item-actions {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.btn-sm {
+  font-size: 11.5px;
+  padding: 3px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: background 0.12s;
+}
+
+.btn-sm.edit {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.btn-sm.edit:hover { background: #ddd6fe; }
+
+.btn-sm.del {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.btn-sm.del:hover { background: #fee2e2; }
+
+/* ── Add Technique Collapsible ───────────────────── */
+details { margin-top: 12px; }
+
+summary.add-summary {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 6px 0;
+  list-style: none;
+  user-select: none;
+}
+
+summary.add-summary::-webkit-details-marker { display: none; }
+summary.add-summary::before { content: '+ '; }
+details[open] summary.add-summary::before { content: '− '; }
+
+.add-form {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}

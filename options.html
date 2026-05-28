@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt Toolkit — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <span class="logo">✨ Prompt Toolkit</span>
+      <span class="subtitle">Settings</span>
+    </header>
+
+    <!-- API Key -->
+    <section class="card">
+      <h2 class="card-title">Groq API Key</h2>
+      <p class="card-desc">
+        Required to enhance prompts. Get a free key at
+        <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a>.
+        Stored locally in your browser — never sent anywhere except the Groq API.
+      </p>
+      <div class="field-row">
+        <input type="password" id="api-key-input" placeholder="gsk_…" autocomplete="off" spellcheck="false">
+        <button id="btn-toggle-key" class="btn-icon" title="Show/hide key">👁</button>
+      </div>
+      <div class="action-row">
+        <button id="btn-save-key" class="btn-primary">Save Key</button>
+        <button id="btn-test-key" class="btn-secondary">Test Connection</button>
+        <button id="btn-remove-key" class="btn-danger">Remove</button>
+      </div>
+      <div id="key-status" class="status-msg hidden"></div>
+    </section>
+
+    <!-- Custom Techniques -->
+    <section class="card">
+      <h2 class="card-title">Custom Techniques</h2>
+      <p class="card-desc">
+        Add your own techniques. They appear in the popup alongside the 6 built-in ones.
+      </p>
+
+      <div id="custom-list" class="custom-list"></div>
+
+      <details id="add-technique-details">
+        <summary class="add-summary">+ Add Technique</summary>
+        <div class="add-form" id="add-form">
+          <div class="form-group">
+            <label>Name <span class="req">*</span></label>
+            <input type="text" id="ct-name" placeholder="e.g. Socratic Questioning" maxlength="60">
+          </div>
+          <div class="form-group">
+            <label>Description <span class="req">*</span></label>
+            <input type="text" id="ct-desc" placeholder="One-line summary shown in the card" maxlength="140">
+          </div>
+          <div class="form-group">
+            <label>Example Prompt</label>
+            <input type="text" id="ct-example" placeholder="An example prompt for the Try It button" maxlength="200">
+          </div>
+          <div class="form-group">
+            <label>Enhancement Instruction <span class="req">*</span></label>
+            <textarea id="ct-instruction" placeholder="Tell Claude how to rewrite the prompt using your technique…" rows="4"></textarea>
+          </div>
+          <div id="ct-form-error" class="status-msg error hidden"></div>
+          <div class="action-row">
+            <button id="btn-save-technique" class="btn-primary">Save Technique</button>
+            <button id="btn-cancel-technique" class="btn-secondary">Cancel</button>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- Data -->
+    <section class="card">
+      <h2 class="card-title">Data</h2>
+      <p class="card-desc">Prompt history is stored locally and never leaves your device.</p>
+      <div class="action-row">
+        <button id="btn-clear-history" class="btn-danger">Clear History</button>
+      </div>
+      <div id="data-status" class="status-msg hidden"></div>
+    </section>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

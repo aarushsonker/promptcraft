@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PromptCraft</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="techniques.js"></script>
+</head>
+<body>
+  <header>
+    <span class="logo">PromptCraft</span>
+    <nav class="header-nav">
+      <button id="btn-history">History</button>
+      <button id="btn-options">Settings</button>
+    </nav>
+  </header>
+
+  <!-- Enhance View -->
+  <main id="view-enhance" class="view active">
+    <div class="section">
+      <div class="textarea-header">
+        <label class="field-label" for="prompt-input">Your prompt</label>
+        <button id="btn-import" class="btn-ghost-sm">Import from page</button>
+      </div>
+      <textarea
+        id="prompt-input"
+        placeholder="Paste or type your prompt…"
+        spellcheck="false"
+      ></textarea>
+    </div>
+
+    <div class="section">
+      <label class="field-label">Technique</label>
+      <div id="technique-buttons" class="technique-buttons"></div>
+      <div id="technique-card" class="technique-card"></div>
+    </div>
+
+    <div class="section section-action">
+      <button id="btn-enhance" class="btn-enhance">Enhance prompt</button>
+    </div>
+
+    <div id="result-section" class="section hidden"></div>
+  </main>
+
+  <!-- History View -->
+  <aside id="view-history" class="view">
+    <div class="history-header">
+      <button id="btn-back" class="btn-ghost-sm">← Back</button>
+      <span class="history-title">History</span>
+      <button id="btn-clear-history" class="btn-ghost-danger">Clear all</button>
+    </div>
+    <div id="history-list" class="history-list"></div>
+  </aside>
+
+  <script src="popup.js"></script>
+</body>
+</html>
