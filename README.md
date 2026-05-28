@@ -1,8 +1,8 @@
-# PromptCraft
+# Promptsi
 
 A Chrome extension that rewrites your AI prompts using prompt engineering techniques — before you send them.
 
-You type a rough prompt into Claude, ChatGPT, or Gemini. PromptCraft reads it, rewrites it using whichever technique you pick, and inserts the improved version back into the input box. It also tells you what details are missing that would make the output even better.
+You type a rough prompt into Claude, ChatGPT, or Gemini. Promptsi reads it, rewrites it using whichever technique you pick, and inserts the improved version back into the input box. It also tells you what details are missing that would make the output even better.
 
 ---
 
@@ -36,7 +36,7 @@ Groq is free. Go to [console.groq.com/keys](https://console.groq.com/keys), sign
 
 **3. Add the key**
 
-Click the PromptCraft icon → Settings → paste your key → Save → Test Connection.
+Click the Promptsi icon → Settings → paste your key → Save → Test Connection.
 
 ---
 
@@ -44,7 +44,7 @@ Click the PromptCraft icon → Settings → paste your key → Save → Test Con
 
 1. Go to any AI chat (Claude, ChatGPT, Gemini, or anything else)
 2. Type your prompt into the input box
-3. Open PromptCraft — it auto-imports what you typed
+3. Open Promptsi — it auto-imports what you typed
 4. Pick a technique, click **Enhance prompt**
 5. Review the before/after, check the suggestions at the bottom
 6. Click **Insert into page** to replace your original prompt

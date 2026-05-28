@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "PromptCraft – AI Prompt Enhancer",
+  "name": "Promptsi – AI Prompt Enhancer",
   "version": "1.0.0",
   "description": "Enhance any prompt using 6 proven prompt engineering techniques.",
   "permissions": ["activeTab", "scripting", "storage"],
