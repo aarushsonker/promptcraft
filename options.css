@@ -1,21 +1,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --primary: #7c3aed;
-  --primary-hover: #6d28d9;
-  --primary-light: #ede9fe;
-  --bg: #f3f4f6;
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-light: #e0f2fe;
+  --bg: #f0f4f8;
   --surface: #ffffff;
-  --border: #e5e7eb;
-  --text: #111827;
-  --text-secondary: #4b5563;
-  --text-muted: #9ca3af;
+  --border: #d6e0ea;
+  --text: #0f1923;
+  --text-secondary: #3d4f5f;
+  --text-muted: #8096a7;
   --danger: #dc2626;
   --danger-bg: #fef2f2;
   --danger-border: #fca5a5;
   --success: #059669;
   --success-bg: #f0fdf4;
-  --radius: 10px;
+  --radius: 8px;
 }
 
 body {
@@ -43,7 +43,7 @@ body {
 .logo {
   font-size: 18px;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--text);
 }
 
 .subtitle {

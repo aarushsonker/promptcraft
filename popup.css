@@ -1,17 +1,18 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink:        #16161a;
-  --ink-2:      #4a4a55;
-  --ink-3:      #9696a0;
-  --bg:         #f5f5f7;
+  --ink:        #0f1923;
+  --ink-2:      #3d4f5f;
+  --ink-3:      #8096a7;
+  --bg:         #f0f4f8;
   --surface:    #ffffff;
-  --border:     #dddde5;
-  --accent:     #4f46e5;
-  --accent-dim: #f0f0ff;
+  --border:     #d6e0ea;
+  --accent:     #0284c7;
+  --accent-2:   #06b6d4;
+  --accent-dim: #e0f2fe;
   --danger:     #b91c1c;
   --danger-dim: #fef2f2;
-  --radius:     6px;
+  --radius:     7px;
 }
 
 html { font-size: 13px; }
@@ -31,16 +32,25 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  padding: 11px 16px;
+  background: var(--ink);
+  border-bottom: none;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 13.5px;
   font-weight: 700;
-  color: var(--ink);
+  color: #ffffff;
   letter-spacing: -0.02em;
+}
+
+.logo img {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 
 .header-nav {
@@ -54,7 +64,7 @@ header {
   cursor: pointer;
   font-size: 12px;
   font-weight: 500;
-  color: var(--ink-3);
+  color: rgba(255,255,255,0.55);
   padding: 4px 10px;
   border-radius: var(--radius);
   transition: color 0.1s, background 0.1s;
@@ -62,8 +72,8 @@ header {
 }
 
 .header-nav button:hover {
-  color: var(--ink);
-  background: var(--bg);
+  color: #ffffff;
+  background: rgba(255,255,255,0.1);
 }
 
 /* ── Views ───────────────────────────────────────── */
@@ -80,14 +90,17 @@ header {
 .section-action {
   padding: 12px 16px;
   background: var(--bg);
+  border-bottom: none;
 }
 
 /* ── Labels ──────────────────────────────────────── */
 .field-label {
   display: block;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--ink-2);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   margin-bottom: 8px;
 }
 
@@ -142,13 +155,17 @@ header {
   font-size: 13px;
   line-height: 1.6;
   color: var(--ink);
-  background: var(--surface);
+  background: var(--bg);
   resize: vertical;
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, background 0.15s;
 }
 
-#prompt-input:focus { border-color: var(--accent); }
+#prompt-input:focus {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
 #prompt-input::placeholder { color: var(--ink-3); }
 
 /* ── Technique buttons ───────────────────────────── */
@@ -160,31 +177,31 @@ header {
 }
 
 .tech-btn {
-  height: 30px;
-  min-width: 30px;
-  padding: 0 11px;
+  height: 28px;
+  min-width: 28px;
+  padding: 0 10px;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
+  border-radius: 5px;
+  background: var(--bg);
   cursor: pointer;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink-2);
   font-family: inherit;
-  transition: all 0.1s;
+  transition: all 0.12s;
   white-space: nowrap;
 }
 
 .tech-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: var(--accent-dim);
 }
 
 .tech-btn.active {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
-  font-weight: 600;
 }
 
 /* ── Technique card ──────────────────────────────── */
@@ -192,11 +209,12 @@ header {
   background: var(--bg);
   border-radius: var(--radius);
   padding: 11px 13px;
+  border: 1px solid var(--border);
 }
 
 .technique-card h3 {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
   margin-bottom: 3px;
 }
@@ -221,9 +239,9 @@ header {
   color: var(--accent);
   border: 1px solid var(--accent);
   padding: 3px 10px;
-  border-radius: var(--radius);
+  border-radius: 5px;
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   font-family: inherit;
   transition: all 0.1s;
@@ -241,18 +259,19 @@ header {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+  font-style: italic;
 }
 
 /* ── Enhance button ──────────────────────────────── */
 .btn-enhance {
   width: 100%;
   padding: 10px;
-  background: var(--ink);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   color: #fff;
   border: none;
   border-radius: var(--radius);
-  font-size: 13.5px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.01em;
@@ -268,7 +287,7 @@ header {
 
 /* ── General buttons ─────────────────────────────── */
 .btn-primary {
-  background: var(--ink);
+  background: var(--accent);
   color: #fff;
   border: none;
   border-radius: var(--radius);
@@ -320,12 +339,12 @@ header {
 }
 
 .panel-before {
-  border-left: 3px solid #d1d1db;
+  border-top: 3px solid #c0cdd8;
   background: var(--bg);
 }
 
 .panel-after {
-  border-left: 3px solid var(--accent);
+  border-top: 3px solid var(--accent);
   background: var(--surface);
 }
 
@@ -359,14 +378,19 @@ header {
 /* ── Suggestions ─────────────────────────────────── */
 .suggestions {
   margin-bottom: 12px;
-  padding: 0 1px;
+  padding: 10px 12px;
+  background: var(--accent-dim);
+  border-radius: var(--radius);
+  border: 1px solid #bae6fd;
 }
 
 .suggestions-label {
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--ink-2);
-  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
 }
 
 .suggestions-list {
@@ -424,10 +448,10 @@ header {
   border-radius: var(--radius);
   padding: 10px 12px;
   background: var(--bg);
-  margin-bottom: 0;
 }
 
 .confirm-text {
+  display: block;
   font-size: 12px;
   color: var(--ink-2);
   margin-bottom: 9px;
@@ -450,13 +474,13 @@ header {
 
 .history-title {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
   flex: 1;
   text-align: center;
 }
 
-.history-list { padding: 10px 12px; }
+.history-list { padding: 8px 12px; }
 
 .history-item {
   padding: 10px 0;
@@ -474,11 +498,11 @@ header {
 }
 
 .history-technique {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10.5px;
+  font-weight: 700;
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .history-time {
@@ -505,7 +529,7 @@ header {
   border: none;
   cursor: pointer;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0;
   transition: opacity 0.1s;
 }
